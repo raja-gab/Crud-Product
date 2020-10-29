@@ -1,0 +1,22 @@
+<div class="form-group">
+  <h1>Ajouter un produit</h1>
+  <br>
+  <label class="control-label col-md-5">Nom de produit</label>
+  <div class="col-md-5 col-xs-11">
+    <input class="form-control form-control-inline input-medium default-date-picker" placeholder="nom du produit" type="text" [(ngModel)]="produit.nom">
+  </div>
+ 
+  <label class="control-label col-md-5">Prix unitaire de produit</label>
+  <div class="col-md-5 col-xs-11">
+    <input class="form-control form-control-inline input-medium default-date-picker" placeholder="prix unitaire"
+    size="16" type="text" [(ngModel)]="produit.prixUnitaire" required>
+  </div>
+
+  <label class="control-label col-md-5">Quantité de produit</label>
+  <div class="col-md-5 col-xs-11">
+    <input class="form-control form-control-inline input-medium default-date-picker" required placeholder="quantite du produit"
+    size="16" type="text" [(ngModel)]="produit.quantite" >
+  </div>
+  <button class="btn btn-primary" (click)="onSubmit()" style="margin-left: 70%;margin-top: 3%;" >Ajouter </button>
+  <button class="btn btn-primary" routerLink="/" style="margin-left: 80%% ;margin-top: 3%;" >Annuller </button>
+</div>

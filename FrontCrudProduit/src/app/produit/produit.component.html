@@ -1,0 +1,31 @@
+<div>
+    <h1>Liste de tous les produits </h1>
+    <h4><button class="btn btn-secondary" routerLink="/addProduit" style="margin-left: 70%;">Ajouter un produit</button ></h4>
+    <div class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2"  [(ngModel)]=searchText type="search" placeholder="Search" aria-label="Search" style="margin-left: 70%;">
+      </div>
+   
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prix Unitaire</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Modifier</th>
+            <th scope="col">Supprimer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of produits | filter:searchText">
+            <th scope="row">{{p.id}}</th>
+            <td>{{p.nom}}</td>
+            <td>{{p.prixUnitaire}} $</td>
+            <td>{{p.quantite}}</td>
+            <td> <button  (click)="produit(p.id)" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit"></span></button></td>
+            <td><button (click)="deleteProduit(p.id)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></button></td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>
